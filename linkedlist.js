@@ -1,14 +1,14 @@
 class LinkedList {
 
     constructor() {
-        this.head = null
-        this.length = 0
+        this.head = null;
+        this.length = 0;
     }
 
     insertAtHead(data){
-        const newNode = new LinkedListNode(data, this.head)
-        this.head = newNode
-        this.length++
+        const newNode = new LinkedListNode(data, this.head);
+        this.head = newNode;
+        this.length++;
     }
 
     getByIndex(index) {
@@ -24,10 +24,10 @@ class LinkedList {
         let output = '';
         let current = this.head;
         while (current) {
-            output = `${output}${current.value} -> `
-            current = current.next
+            output = `${output}${current.value} -> `;
+            current = current.next;
         }
-        console.log(`${output}null`)
+        console.log(`${output}null`);
     }
 }
 
@@ -41,8 +41,7 @@ class LinkedListNode {
 LinkedList.fromValues = function(...values) {
     const list = new LinkedList();
     for (let i = values.length - 1; i >= 0; i--){
-        list.insertAtHead(values[i])
-
+        list.insertAtHead(values[i]);
     }
     return list;
 }
