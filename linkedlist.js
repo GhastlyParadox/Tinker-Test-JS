@@ -11,6 +11,14 @@ class LinkedList {
         this.length++;
     }
 
+    insertAtIndex(index, value) {
+        if (index === 0) return this.insertAtHead(value);
+        const prev = this.getByIndex(index - 1);
+        if (prev === null) return null;
+        prev.next = new LinkedListNode(value, prev.next);
+        this.length++;
+    }
+
     getByIndex(index) {
         if (index < 0 || index > this.length) return null;
         let current = this.head;
