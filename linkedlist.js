@@ -4,6 +4,7 @@ class LinkedList {
         this.head = null
         this.length = 0
     }
+
     insertAtHead(data){
         const newNode = new LinkedListNode(data, this.head)
         this.head = newNode
@@ -17,6 +18,16 @@ class LinkedList {
             current = current.next;
         }
         return current;
+    }
+
+    printList(){
+        let output = '';
+        let current = this.head;
+        while (current) {
+            output = `${output}${current.value} -> `
+            current = current.next
+        }
+        console.log(`${output}null`)
     }
 }
 
